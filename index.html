@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boostez votre activité d'Artisan dans le 66 | Création Web & Leads</title>
+    <style>
+        :root {
+            --primary: #0f172a; /* Bleu très foncé, pro */
+            --accent: #ea580c; /* Orange dynamique pour l'action */
+            --bg: #f8fafc;
+            --text: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        /* En-tête */
+        header { background: var(--primary); color: white; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        header h1 { font-size: 1.5rem; letter-spacing: 1px; }
+        
+        /* Hero Section (Accroche) */
+        .hero { text-align: center; padding: 60px 20px; background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80') center/cover; color: white; }
+        .hero h2 { font-size: 2.2rem; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; color: #cbd5e1; }
+        
+        /* Boutons */
+        .btn { display: inline-block; background: var(--accent); color: white; padding: 15px 30px; font-size: 1.2rem; font-weight: bold; text-decoration: none; border-radius: 8px; transition: transform 0.2s; box-shadow: 0 4px 6px rgba(234, 88, 12, 0.3); }
+        .btn:active { transform: scale(0.95); }
+        
+        /* Section Offres */
+        .offres { padding: 50px 20px; max-width: 1000px; margin: 0 auto; }
+        .section-titre { text-align: center; font-size: 2rem; margin-bottom: 40px; color: var(--primary); }
+        
+        .grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+        @media(min-width: 768px) { .grid { grid-template-columns: 1fr 1fr; } }
+        
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border-top: 5px solid var(--primary); }
+        .card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--primary); }
+        .card.premium { border-top: 5px solid var(--accent); }
+        .card.premium h3 { color: var(--accent); }
+        
+        .card ul { list-style: none; margin-bottom: 25px; }
+        .card ul li { margin-bottom: 10px; padding-left: 25px; position: relative; }
+        .card ul li::before { content: "✅"; position: absolute; left: 0; font-size: 0.9rem; }
+        
+        .prix { font-size: 1.8rem; font-weight: bold; margin-bottom: 20px; color: var(--primary); }
+        
+        /* Call to Action Final */
+        .cta-section { text-align: center; padding: 60px 20px; background: var(--primary); color: white; }
+        .cta-section h2 { margin-bottom: 20px; }
+        
+        footer { text-align: center; padding: 20px; background: #020617; color: #64748b; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🚀 Lindor Digital | Artisans 66</h1>
+    </header>
+
+    <section class="hero">
+        <h2>Artisans du 66 : Arrêtez de partager vos clients avec vos concurrents.</h2>
+        <p>Développez votre image de marque avec un site web sur-mesure et recevez des demandes d'intervention exclusives sur votre secteur.</p>
+        <a href="#offres" class="btn">Découvrir nos solutions 👇</a>
+    </section>
+
+    <section id="offres" class="offres">
+        <h2 class="section-titre">Nos 2 solutions pour votre croissance</h2>
+        
+        <div class="grid">
+            <!-- Offre 1 : Site Web -->
+            <div class="card">
+                <h3>💻 Création de Site Web Pro</h3>
+                <p>Ne soyez plus invisible sur Google. Nous créons votre vitrine digitale pour asseoir votre autorité.</p>
+                <br>
+                <ul>
+                    <li>Design moderne et adapté aux mobiles</li>
+                    <li>Optimisation SEO Local (Google)</li>
+                    <li>Bouton d'appel direct pour vos clients</li>
+                    <li>Livraison rapide et clé en main</li>
+                </ul>
+                <div class="prix">Sur devis</div>
+                <p style="font-size: 0.9rem; color: #64748b;">Un investissement unique pour un actif qui vous appartient.</p>
+            </div>
+
+            <!-- Offre 2 : Abonnement Leads -->
+            <div class="card premium">
+                <h3>⚡ Exclusivité "SOS Dépannage 66"</h3>
+                <p>Le partenariat ultime. Nous vous envoyons nos urgences, vous encaissez 100% du chantier.</p>
+                <br>
+                <ul>
+                    <li><strong>1 seul artisan par secteur</strong></li>
+                    <li>Zéro commission sur vos chantiers</li>
+                    <li>Appels entrants directs et qualifiés</li>
+                    <li>Contrat sans engagement caché</li>
+                </ul>
+                <div class="prix">250€ / mois</div>
+                <p style="font-size: 0.9rem; color: #64748b;">Rentabilisé dès votre première intervention du mois.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Prêt à dominer votre secteur ?</h2>
+        <p style="margin-bottom: 30px; font-size: 1.1rem; color: #cbd5e1;">Réservez un appel stratégique de 15 minutes pour vérifier si votre secteur est encore disponible.</p>
+        <!-- Remplacer le lien # par ton lien Calendly -->
+        <a href="#" class="btn" style="background: white; color: var(--primary);">📞 Réserver mon appel de présentation</a>
+    </section>
+
+    <footer>
+        <p>© 2026 Lindor Digital. Accompagnement digital pour les artisans des Pyrénées-Orientales.</p>
+    </footer>
+
+</body>
+</html>
