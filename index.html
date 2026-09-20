@@ -61,10 +61,11 @@
     border-bottom:1px solid var(--line);
   }
   .header-inner{
-    display:flex;align-items:center;justify-content:space-between;
+    display:flex;align-items:center;justify-content:space-between;gap: 15px;
     padding:16px 24px;max-width:1120px;margin:0 auto;
+    flex-wrap: wrap;
   }
-  .mark{display:flex;align-items:center;gap:10px;font-family:var(--serif-display);font-weight:800;font-size:1.05rem;letter-spacing:0.3px;}
+  .mark{display:flex;align-items:center;gap:10px;font-family:var(--serif-display);font-weight:800;font-size:1.05rem;letter-spacing:0.3px; flex-shrink: 0;}
   .mark-badge{
     width:34px;height:34px;border-radius:6px;
     background:var(--orange);
@@ -72,8 +73,7 @@
     font-family:var(--mono);font-weight:600;font-size:0.95rem;color:var(--navy);
     transform:rotate(-3deg);
   }
-  .mark span.dim{color:var(--muted);font-weight:500;font-family:var(--sans);font-size:0.85rem;margin-left:2px;}
-  .header-tag{font-family:var(--mono);font-size:0.8rem;color:var(--muted);}
+  .header-tag{font-family:var(--mono);font-size:0.8rem;color:var(--muted);text-align: right;}
 
   /* ---------- hero ---------- */
   .hero{padding:76px 0 56px;}
@@ -161,7 +161,7 @@
     border-left:2px solid var(--gold);padding-left:10px;
   }
 
-  /* ---------- offers ---------- */
+  /* ---------- offres ---------- */
   .offres{padding:36px 0 20px;}
   .grid{display:grid;grid-template-columns:1fr;gap:26px;}
   @media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr);align-items:stretch;}}
@@ -340,8 +340,8 @@
 
 <header>
   <div class="header-inner">
-    <div class="mark"><span class="mark-badge">LD</span>Lindor Digital<span class="dim">— 66</span></div>
-    <div class="header-tag">Pyrénées-Orientales</div>
+    <div class="mark"><span class="mark-badge">LD</span>Lindor Digital</div>
+    <div class="header-tag">Création de site et solutions pour artisans</div>
   </div>
   <div class="senyera-bar" aria-hidden="true"></div>
 </header>
@@ -419,7 +419,7 @@
           </div>
         </div>
         <span class="option-flag">option</span>
-        <div class="tag-price"><span class="amount">250 €</span><span class="cadence">configuration unique</span></div>
+        <div class="tag-price"><span class="amount">150 €</span><span class="cadence">configuration unique</span></div>
         <ul>
           <li>Campagne publicitaire créée et paramétrée</li>
           <li>Mots-clés les plus rentables du 66 identifiés</li>
@@ -435,9 +435,10 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
           </div>
         </div>
-        <div class="tag-price"><span class="amount">250 €</span><span class="cadence">par mois, sans commission</span></div>
+        <div class="tag-price"><span class="amount">200 €</span><span class="cadence">par mois, sans engagement</span></div>
         <ul>
           <li>Un seul artisan retenu par secteur</li>
+          <li><strong>Page dédiée</strong> sur notre site avec votre présentation et photo</li>
           <li>Zone choisie par vous, de 10 à 40 km</li>
           <li>Appels entrants directs et qualifiés</li>
         </ul>
