@@ -222,6 +222,29 @@
     background:rgba(23,19,15,0.08);padding:3px 8px;border-radius:4px;
   }
 
+  /* ---------- bonus banner ---------- */
+  .bonus-banner{
+    background:radial-gradient(circle at top right, var(--navy-3), var(--navy-2) 80%);
+    border:1px solid var(--gold);
+    border-radius:12px;
+    padding:34px 26px;
+    margin-top:40px;
+    text-align:center;
+    box-shadow:0 20px 40px -10px rgba(0,0,0,0.5);
+    position:relative;
+    overflow:hidden;
+  }
+  .bonus-banner::before {
+    content:"🎁"; position:absolute; font-size:6rem; opacity:0.04; top:-10px; right:-10px; transform:rotate(15deg);
+  }
+  .bonus-banner h3{font-family:var(--serif-display);font-weight:700;font-size:1.4rem;color:var(--gold);margin-bottom:12px;}
+  .bonus-banner p{color:var(--paper);font-size:1.05rem;max-width:65ch;margin:0 auto;}
+  .bonus-tag{
+    display:inline-block;margin-top:18px;
+    font-family:var(--mono);font-size:0.9rem;color:var(--navy);
+    background:var(--gold);padding:6px 16px;border-radius:100px;font-weight:600;
+  }
+
   /* ---------- demo panel ---------- */
   .demo{padding:70px 0;}
   .demo-panel{
@@ -277,10 +300,19 @@
   .whatsapp-btn svg{width:20px;height:20px;color:#25D366;flex:none;}
 
   footer{
-    text-align:center;padding:28px 20px;
+    text-align:center;padding:34px 20px 40px;
     background:var(--ink);color:var(--muted);font-size:0.84rem;
   }
   footer a{text-decoration:underline;text-underline-offset:3px;}
+  .footer-ebay{
+    margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(241,231,214,0.08);
+  }
+  .footer-ebay a{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--gold);text-decoration:none;font-weight:500;font-size:0.95rem;
+    transition: color 0.2s ease;
+  }
+  .footer-ebay a:hover{color:var(--paper);}
 
   :focus-visible{outline:2px solid var(--orange);outline-offset:3px;}
 
@@ -445,6 +477,14 @@
         <p class="note">Condition : pouvoir intervenir chez le client en moins d'une heure.</p>
       </div>
     </div>
+
+    <!-- BANNIÈRE BONUS EXCLUSIF -->
+    <div class="bonus-banner">
+      <h3>Bonus Exclusif : Le Pack Combo</h3>
+      <p>Pour toute souscription au Pack Complet (Site Web + Abonnement SOS), nous vous offrons <strong>un ou plusieurs articles personnalisés avec le logo de votre entreprise</strong> (T-shirt de travail, veste de chantier, protection roue de secours...). L'idéal pour valoriser votre image sur le terrain !</p>
+      <span class="bonus-tag">Valeur offerte : 70 €</span>
+    </div>
+
   </section>
 
   <section id="demo" class="demo wrap">
@@ -522,6 +562,12 @@
 
 <footer>
   <p>© 2026 Lindor Digital — accompagnement digital pour les artisans des Pyrénées-Orientales. <a href="#mentions">Mentions légales</a></p>
+  <div class="footer-ebay">
+    <a href="https://ebay.us/m/ODrzGu" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      Découvrez nos objets de communication et de personnalisation
+    </a>
+  </div>
 </footer>
 
 </body>
