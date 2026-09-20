@@ -3,109 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boostez votre activité d'Artisan dans le 66 | Création Web & Leads</title>
+    <title>Lindor Digital | Agence Web & Leads pour Artisans du 66</title>
     <style>
         :root {
-            --primary: #0f172a; /* Bleu très foncé, pro */
-            --accent: #ea580c; /* Orange dynamique pour l'action */
-            --bg: #f8fafc;
-            --text: #334155;
+            --bg-dark: #0f172a; /* Bleu nuit très profond */
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --primary: #3b82f6; /* Bleu électrique */
+            --accent: #f97316; /* Orange vibrant */
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            /* Variables pour l'effet Verre (Glassmorphism) */
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        
+        body { 
+            background: var(--bg-gradient); 
+            color: var(--text-light); 
+            line-height: 1.6; 
+            min-height: 100vh;
+        }
         
         /* En-tête */
-        header { background: var(--primary); color: white; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        header h1 { font-size: 1.5rem; letter-spacing: 1px; }
+        header { 
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 20px; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        header h1 { font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 800; background: linear-gradient(90deg, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* Hero Section (Accroche) */
-        .hero { text-align: center; padding: 60px 20px; background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80') center/cover; color: white; }
-        .hero h2 { font-size: 2.2rem; margin-bottom: 20px; line-height: 1.2; }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; color: #cbd5e1; }
+        /* Accroche Principale */
+        .hero { text-align: center; padding: 70px 20px 40px; }
+        .hero h2 { 
+            font-size: 2.5rem; 
+            margin-bottom: 25px; 
+            line-height: 1.2; 
+            font-weight: 800;
+        }
+        
+        /* Highlight Création de site dans l'accroche */
+        .hero-highlight {
+            display: block;
+            font-size: 1.8rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-top: 20px;
+            letter-spacing: 1px;
+            text-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+        }
+
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px auto; color: var(--text-muted); }
         
         /* Boutons */
-        .btn { display: inline-block; background: var(--accent); color: white; padding: 15px 30px; font-size: 1.2rem; font-weight: bold; text-decoration: none; border-radius: 8px; transition: transform 0.2s; box-shadow: 0 4px 6px rgba(234, 88, 12, 0.3); }
+        .btn { 
+            display: inline-block; 
+            background: linear-gradient(90deg, var(--accent), #ea580c); 
+            color: white; 
+            padding: 16px 35px; 
+            font-size: 1.2rem; 
+            font-weight: bold; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 0 20px rgba(234, 88, 12, 0.4); 
+            border: 1px solid rgba(255,255,255,0.2);
+        }
         .btn:active { transform: scale(0.95); }
         
-        /* Section Offres */
-        .offres { padding: 50px 20px; max-width: 1000px; margin: 0 auto; }
-        .section-titre { text-align: center; font-size: 2rem; margin-bottom: 40px; color: var(--primary); }
+        /* Section Offres - Grid */
+        .offres { padding: 40px 20px 80px; max-width: 1200px; margin: 0 auto; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 30px; 
+        }
+        @media(min-width: 900px) { .grid { grid-template-columns: repeat(3, 1fr); } }
         
-        .grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
-        @media(min-width: 768px) { .grid { grid-template-columns: 1fr 1fr; } }
+        /* Effet Verre (Glassmorphism) pour les cartes */
+        .card { 
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            border-radius: 20px; 
+            padding: 35px 25px; 
+            position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
         
-        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border-top: 5px solid var(--primary); }
-        .card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--primary); }
-        .card.premium { border-top: 5px solid var(--accent); }
-        .card.premium h3 { color: var(--accent); }
+        /* Carte VIP (Création de Site - Plus Grosse) */
+        .card.vip {
+            background: rgba(59, 130, 246, 0.1);
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.3) inset, var(--glass-shadow);
+        }
+        @media(min-width: 900px) {
+            .card.vip { transform: scale(1.05); z-index: 10; }
+        }
+        
+        .card h3 { font-size: 1.6rem; margin-bottom: 20px; color: white; text-transform: uppercase; letter-spacing: 1px; }
+        .card.vip h3 { font-size: 2rem; color: var(--primary); text-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
+        
+        .prix-bloc { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid var(--glass-border); }
+        .prix { font-size: 2.2rem; font-weight: 900; color: white; }
+        .prix-sub { font-size: 1rem; color: var(--accent); font-weight: bold; }
         
         .card ul { list-style: none; margin-bottom: 25px; }
-        .card ul li { margin-bottom: 10px; padding-left: 25px; position: relative; }
-        .card ul li::before { content: "✅"; position: absolute; left: 0; font-size: 0.9rem; }
+        .card ul li { margin-bottom: 15px; padding-left: 30px; position: relative; color: #e2e8f0; font-size: 1.05rem; }
+        .card ul li::before { content: "✨"; position: absolute; left: 0; font-size: 1.1rem; }
         
-        .prix { font-size: 1.8rem; font-weight: bold; margin-bottom: 20px; color: var(--primary); }
+        .warning-text { font-size: 0.9rem; color: #facc15; font-style: italic; margin-top: 15px; display: block; border-left: 3px solid #facc15; padding-left: 10px;}
         
         /* Call to Action Final */
-        .cta-section { text-align: center; padding: 60px 20px; background: var(--primary); color: white; }
-        .cta-section h2 { margin-bottom: 20px; }
+        .cta-section { text-align: center; padding: 80px 20px; background: rgba(0,0,0,0.3); border-top: 1px solid var(--glass-border); }
         
-        footer { text-align: center; padding: 20px; background: #020617; color: #64748b; font-size: 0.9rem; }
+        footer { text-align: center; padding: 25px; background: #020617; color: var(--text-muted); font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>🚀 Lindor Digital | Artisans 66</h1>
+        <h1>💎 Lindor Digital</h1>
     </header>
 
-    <section class="hero">
-        <h2>Artisans du 66 : Arrêtez de partager vos clients avec vos concurrents.</h2>
-        <p>Développez votre image de marque avec un site web sur-mesure et recevez des demandes d'intervention exclusives sur votre secteur.</p>
-        <a href="#offres" class="btn">Découvrir nos solutions 👇</a>
-    </section>
-
-    <section id="offres" class="offres">
-        <h2 class="section-titre">Nos 2 solutions pour votre croissance</h2>
+    <main>
+        <section class="hero">
+            <h2>Artisans du 66 : Sortez de l'ombre et faites enfin sonner votre téléphone avec des demandes exclusives.</h2>
+            <span class="hero-highlight">Démarquez-vous avec la Création d'un Site Web Prestige</span>
+            <p style="margin-top:20px;">Nous construisons votre image de marque sur-mesure et vous propulsons sur le marché local.</p>
+        </section>
         
-        <div class="grid">
-            <!-- Offre 1 : Site Web -->
-            <div class="card">
-                <h3>💻 Création de Site Web Pro</h3>
-                <p>Ne soyez plus invisible sur Google. Nous créons votre vitrine digitale pour asseoir votre autorité.</p>
-                <br>
-                <ul>
-                    <li>Design moderne et adapté aux mobiles</li>
-                    <li>Optimisation SEO Local (Google)</li>
-                    <li>Bouton d'appel direct pour vos clients</li>
-                    <li>Livraison rapide et clé en main</li>
-                </ul>
-                <div class="prix">Sur devis</div>
-                <p style="font-size: 0.9rem; color: #64748b;">Un investissement unique pour un actif qui vous appartient.</p>
-            </div>
+        <section id="offres" class="offres">
+            <div class="grid">
+                
+                <!-- Offre 1 : Création de Site (MISE EN AVANT) -->
+                <div class="card vip">
+                    <h3>💻 Création de Site Web</h3>
+                    <div class="prix-bloc">
+                        <div class="prix">750 €</div>
+                        <div class="prix-sub">Point barre. Rien d'autre à payer.</div>
+                    </div>
+                    <ul>
+                        <li>Design Premium et image de marque sur-mesure</li>
+                        <li>Site 100% adapté aux smartphones</li>
+                        <li>Bouton d'appel d'urgence intégré</li>
+                        <li>Vous êtes propriétaire de votre site à vie</li>
+                    </ul>
+                </div>
 
-            <!-- Offre 2 : Abonnement Leads -->
-            <div class="card premium">
-                <h3>⚡ Exclusivité "SOS Dépannage 66"</h3>
-                <p>Le partenariat ultime. Nous vous envoyons nos urgences, vous encaissez 100% du chantier.</p>
-                <br>
-                <ul>
-                    <li><strong>1 seul artisan par secteur</strong></li>
-                    <li>Zéro commission sur vos chantiers</li>
-                    <li>Appels entrants directs et qualifiés</li>
-                    <li>Contrat sans engagement caché</li>
-                </ul>
-                <div class="prix">250€ / mois</div>
-                <p style="font-size: 0.9rem; color: #64748b;">Rentabilisé dès votre première intervention du mois.</p>
-            </div>
-        </div>
-    </section>
+                <!-- Offre 2 : Paramétrage Google Ads -->
+                <div class="card">
+                    <h3>🎯 Paramétrage Google Ads</h3>
+                    <div class="prix-bloc">
+                        <div class="prix">250 €</div>
+                        <div class="prix-sub">Configuration initiale unique</div>
+                    </div>
+                    <ul>
+                        <li>Création et paramétrage de votre campagne publicitaire</li>
+                        <li>Recherche des mots-clés les plus rentables du 66</li>
+                        <li>Rédaction d'annonces percutantes</li>
+                    </ul>
+                    <span class="warning-text">Attention : Vous gérez ensuite vous-même votre budget publicitaire quotidien versé à Google.</span>
+                </div>
 
-    <section class="cta-section">
-        <h2>Prêt à dominer votre secteur ?</h2>
-        <p style="margin-bottom: 30px; font-size: 1.1rem; color: #cbd5e1;">Réservez un appel stratégique de 15 minutes pour vérifier si votre secteur est encore disponible.</p>
-        <!-- Remplacer le lien # par ton lien Calendly -->
-        <a href="#" class="btn" style="background: white; color: var(--primary);">📞 Réserver mon appel de présentation</a>
-    </section>
+                <!-- Offre 3 : Abonnement Leads SOS -->
+                <div class="card">
+                    <h3>⚡ Exclusivité SOS Dépannage</h3>
+                    <div class="prix-bloc">
+                        <div class="prix">250 €</div>
+                        <div class="prix-sub">Par mois (Sans commission)</div>
+                    </div>
+                    <ul>
+                        <li><strong>1 seul artisan par secteur exclusif</strong></li>
+                        <li>Vous choisissez votre zone (10 à 40 km)</li>
+                        <li>Appels entrants directs qualifiés</li>
+                    </ul>
+                    <span class="warning-text">Condition stricte : Vous devez être capable d'intervenir chez le client en moins d'une heure.</span>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Prêt à dominer votre secteur d'intervention ?</h2>
+            <p style="margin-bottom: 40px; font-size: 1.1rem; color: var(--text-muted);">Réservez un appel stratégique de 15 minutes pour vérifier si votre secteur géographique est encore disponible.</p>
+            <!-- Remplacer le lien # par ton lien Calendly -->
+            <a href="#" class="btn">📞 Réserver mon appel de présentation</a>
+        </section>
+    </main>
 
     <footer>
         <p>© 2026 Lindor Digital. Accompagnement digital pour les artisans des Pyrénées-Orientales.</p>
