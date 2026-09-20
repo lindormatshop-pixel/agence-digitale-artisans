@@ -299,23 +299,6 @@
   .whatsapp-btn:hover{border-color:var(--paper);}
   .whatsapp-btn svg{width:20px;height:20px;color:#25D366;flex:none;}
 
-  footer{
-    text-align:center;padding:34px 20px 40px;
-    background:var(--ink);color:var(--muted);font-size:0.84rem;
-  }
-  footer a{text-decoration:underline;text-underline-offset:3px;}
-  .footer-ebay{
-    margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(241,231,214,0.08);
-  }
-  .footer-ebay a{
-    display:inline-flex;align-items:center;gap:8px;
-    color:var(--gold);text-decoration:none;font-weight:500;font-size:0.95rem;
-    transition: color 0.2s ease;
-  }
-  .footer-ebay a:hover{color:var(--paper);}
-
-  :focus-visible{outline:2px solid var(--orange);outline-offset:3px;}
-
   /* ---------- bandeau régional ---------- */
   .senyera-bar{
     height:6px;width:100%;
@@ -360,12 +343,69 @@
   .faq-item[open] summary::after{content:"–";}
   .faq-item p{padding:0 22px 20px;color:var(--muted);font-size:0.95rem;max-width:62ch;}
 
+  /* ---------- SECTION BOUTIQUE EBAY ---------- */
+  .shop-break {
+    padding: 30px 0 60px;
+  }
+  .shop-banner-link {
+    display: block;
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--orange) 0%, #b91c1c 100%);
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    padding: 35px 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 10px 30px -10px rgba(218, 18, 26, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .shop-banner-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(218, 18, 26, 0.7);
+  }
+  .shop-banner-link::before {
+    content: "🛒"; position: absolute; font-size: 8rem; opacity: 0.1; top: -20px; left: -10px; transform: rotate(-15deg);
+  }
+  .shop-eyebrow { 
+    font-family: var(--sans); font-weight: 600; font-size: 1rem; color: var(--gold); 
+    display: block; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;
+  }
+  .shop-banner-content { position: relative; z-index: 2; }
+  .shop-banner-content h3 { font-family: var(--serif-display); font-size: 2rem; margin-bottom: 12px; color: #fff; }
+  .shop-banner-content p { font-size: 1.15rem; margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  
+  .shop-cta {
+    display: inline-flex; align-items: center; gap: 15px;
+    background: var(--navy); color: var(--gold);
+    padding: 14px 30px; border-radius: 50px;
+    font-weight: 700; font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+  /* Animation des mains */
+  @keyframes point-right {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+  }
+  @keyframes point-left {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-5px); }
+  }
+  .hand-right { display: inline-block; animation: point-right 1s infinite ease-in-out; font-size: 1.3rem; }
+  .hand-left { display: inline-block; animation: point-left 1s infinite ease-in-out; font-size: 1.3rem; }
+
   /* ---------- mentions légales ---------- */
   .mentions{padding:50px 0 30px;border-top:1px solid rgba(241,231,214,0.08);}
   .mentions h2{font-family:var(--serif-display);font-weight:700;font-size:1.15rem;color:var(--paper);margin-bottom:16px;}
   .mentions dl{display:grid;grid-template-columns:max-content 1fr;gap:8px 20px;font-size:0.9rem;color:var(--muted);}
   .mentions dt{font-family:var(--mono);font-size:0.78rem;color:var(--gold);}
   .mentions dd{color:var(--muted);}
+
+  footer{
+    text-align:center;padding:34px 20px 40px;
+    background:var(--ink);color:var(--muted);font-size:0.84rem;
+  }
 </style>
 </head>
 <body>
@@ -549,6 +589,20 @@
     </div>
   </section>
 
+  <!-- NOUVEL ENCART BOUTIQUE EBAY -->
+  <section class="shop-break wrap">
+    <a href="https://ebay.us/m/ODrzGu" target="_blank" rel="noopener" class="shop-banner-link">
+      <div class="shop-banner-content">
+        <span class="shop-eyebrow">Parce qu'un entrepreneur a aussi le droit de se faire plaisir...</span>
+        <h3>Découvrez Lindor Shop</h3>
+        <p>Plus de 4 000 références et vos objets à personnaliser !</p>
+        <div class="shop-cta">
+          <span class="hand-right">👉</span> Visiter la boutique <span class="hand-left">👈</span>
+        </div>
+      </div>
+    </a>
+  </section>
+
   <section id="mentions" class="mentions wrap">
     <h2>Mentions légales</h2>
     <dl>
@@ -561,13 +615,7 @@
 </main>
 
 <footer>
-  <p>© 2026 Lindor Digital — accompagnement digital pour les artisans des Pyrénées-Orientales. <a href="#mentions">Mentions légales</a></p>
-  <div class="footer-ebay">
-    <a href="https://ebay.us/m/ODrzGu" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-      Découvrez nos objets de communication et de personnalisation
-    </a>
-  </div>
+  <p>© 2026 Lindor Digital — Accompagnement digital pour les artisans des Pyrénées-Orientales.</p>
 </footer>
 
 </body>
